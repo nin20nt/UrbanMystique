@@ -1,0 +1,137 @@
+/* ===== SUSPECTS PAGE ===== */
+body:has(.header) {
+    max-height: 100vh;
+}
+
+.suspects-wrapper {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.suspects-heading {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 3px solid #ffff00;
+    padding-bottom: 0.5rem;
+}
+
+.suspects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.suspect-card {
+    padding: 2rem;
+    background-color: #1a1a1a;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.suspect-card:hover {
+    border-color: #ffff00;
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+}
+
+.suspect-name {
+    color: #ffff00;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #ffff00;
+    padding-bottom: 0.5rem;
+}
+
+.suspect-info p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0 0 1rem 0;
+}
+
+.suspect-info p:last-child {
+    margin-bottom: 1.5rem;
+}
+
+.suspect-info strong {
+    color: #ffff00;
+}
+
+.suspicious-points {
+    margin: 1.5rem 0;
+}
+
+.suspicious-points h3 {
+    color: #ffff00;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.suspicious-points ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.suspicious-points li {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.suspicious-points li:before {
+    content: "⚠";
+    color: #ffff00;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+}
+
+.motive {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333333;
+}
+
+.motive p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.motive strong {
+    color: #ffff00;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .suspects-wrapper {
+        padding: 1rem;
+    }
+
+    .suspects-heading {
+        font-size: 2rem;
+    }
+
+    .suspect-card {
+        padding: 1.5rem;
+    }
+
+    .suspect-name {
+        font-size: 1.5rem;
+    }
+
+    .suspect-info p,
+    .suspicious-points li,
+    .motive p {
+        font-size: 1rem;
+    }
+}
