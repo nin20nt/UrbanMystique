@@ -1,0 +1,177 @@
+/* ===== CLUES PAGE ===== */
+body:has(.header) {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100vh;
+}
+
+body:has(.header) > div:not(.header) {
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+body:has(.header) > div:not(.header) > div {
+    padding: 2rem;
+    margin: 2rem;
+    max-width: calc(100% - 4rem);
+}
+
+body:has(.header) > div:not(.header) > .activity-section {
+    padding: 0;
+    margin: 2rem;
+}
+
+body:has(.header) h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #ffff00;
+    padding-bottom: 0.5rem;
+}
+
+body:has(.header) h2 {
+    color: #ffff00;
+    font-size: 1.8rem;
+    margin: 1.5rem 0 1rem 0;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+body:has(.header) p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 5px;
+    border-left: 4px solid #ffff00;
+}
+
+@media (max-width: 768px) {
+    body:has(.header) h1 {
+        font-size: 2rem;
+    }
+    
+    body:has(.header) h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.clues-password-input {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    border: 2px solid #ffff00;
+}
+
+.clues-password-input .input-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.clues-password-input .input-wrapper input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.clues-password-input .input-wrapper input:focus {
+    outline: none;
+    border-color: #ffff00;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+.clues-password-input .input-wrapper input::placeholder {
+    color: #666666;
+}
+
+.clues-password-input .error-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff0000;
+    font-size: 1.2rem;
+}
+
+.clues-password-input .error-message {
+    color: #ff0000;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.clues-password-input button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #000000;
+    color: #ffff00;
+    border: 2px solid #ffff00;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.clues-password-input button:hover {
+    background-color: #ffff00;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.6);
+}
+
+/* Modal for password feedback */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.correct .modal-content {
+    border-color: #00ff00;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+}
+
+.modal.correct #feedbackMessage {
+    color: #00ff00;
+}
+
+.modal.incorrect .modal-content {
+    border-color: #ff0000;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+}
+
+.modal.incorrect #feedbackMessage {
+    color: #ff0000;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #ffff00;
+    text-align: center;
+    min-width: 300px;
+    transition: all 0.3s ease;
+}
+
+#feedbackMessage {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}

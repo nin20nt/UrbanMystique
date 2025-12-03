@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clues - Urban Mystique</title>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="clues.css">
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Logo" class="header-logo">
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu" id="navMenu">
+            <a href="map.html">Map</a>
+            <a href="clues.html">Clues</a>
+            <a href="story.html">Story</a>
+        </nav>
+    </div>
+    <div class="clues-container">
+        <div class="activity-section">
+            <h1>Posy Ceramic Studio</h1>
+            <h2>A guest visited the studio last night asking odd questions about glaze durability. After they left, the owner found something suspicious on the workshop table.</h2>
+            <p>Ceramic pieces must be fired in a kiln. At what temperature does clay typically turn into hard white ceramic - low fire (600-700), mid fire (1000-1100℃) or high fire (1300-1400℃)?</p>
+        </div>
+        <div class="clues-password-input" data-activity="1">
+            <div class="input-wrapper">
+                <input type="password" id="password" placeholder="Enter password">
+                <i class="fas fa-times error-icon" style="display: none;"></i>
+            </div>
+            <div class="error-message" style="display: none;">
+                Wrong password, please retry.
+            </div>
+            <button onclick="checkPassword()">Enter</button>
+        </div>
+    </div>
+    <!-- Modal for password feedback -->
+    <div class="modal" id="feedbackModal" style="display: none;">
+        <div class="modal-content">
+            <p id="feedbackMessage"></p>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+    <script src="clues.js"></script>
+</body>
+</html>
