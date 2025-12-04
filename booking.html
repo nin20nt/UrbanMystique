@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Adventure - Urban Mystique</title>
+    <link rel="stylesheet" href="main-general.css">
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Urban Mystique Logo" class="header-logo">
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="stories.html">Stories</a>
+            <a href="booking.html">Book Now</a>
+            <a href="login.html" class="play-button">▶ Play</a>
+        </nav>
+    </div>
+
+    <div class="booking-wrapper">
+        <h1 class="booking-heading">Choose Your Package</h1>
+        <p class="booking-intro">Select the perfect adventure package for your group. Prices are per person.</p>
+
+        <div class="packages-container">
+            <div class="package-card">
+                <div class="package-header">
+                    <h2>Single Story</h2>
+                    <div class="price">
+                        <span class="price-amount">$50</span>
+                        <span class="price-per">per person</span>
+                    </div>
+                </div>
+                <div class="package-content">
+                    <p class="package-description">Perfect for trying out your first mystery adventure</p>
+                    <ul class="package-features">
+                        <li>Choose 1 mystery story</li>
+                        <li>Access to interactive map</li>
+                        <li>All clues and puzzles included</li>
+                        <li>Digital story guide</li>
+                        <li>Photo opportunities at locations</li>
+                    </ul>
+                </div>
+                <button class="select-button" onclick="selectPackage('single', 50)">Select Package</button>
+            </div>
+
+            <div class="package-card popular">
+                <div class="popular-badge">Most Popular</div>
+                <div class="package-header">
+                    <h2>Double Feature</h2>
+                    <div class="price">
+                        <span class="price-amount">$90</span>
+                        <span class="price-per">per person</span>
+                    </div>
+                    <div class="savings">Save $10!</div>
+                </div>
+                <div class="package-content">
+                    <p class="package-description">Great value for mystery enthusiasts</p>
+                    <ul class="package-features">
+                        <li>Choose 2 mystery stories</li>
+                        <li>Access to interactive map</li>
+                        <li>All clues and puzzles included</li>
+                        <li>Digital story guide</li>
+                        <li>Photo opportunities at locations</li>
+                        <li>Bonus: Behind-the-scenes story notes</li>
+                    </ul>
+                </div>
+                <button class="select-button" onclick="selectPackage('double', 90)">Select Package</button>
+            </div>
+
+            <div class="package-card">
+                <div class="package-header">
+                    <h2>Complete Collection</h2>
+                    <div class="price">
+                        <span class="price-amount">$135</span>
+                        <span class="price-per">per person</span>
+                    </div>
+                    <div class="savings">Save $15!</div>
+                </div>
+                <div class="package-content">
+                    <p class="package-description">The ultimate detective experience</p>
+                    <ul class="package-features">
+                        <li>All 3 mystery stories</li>
+                        <li>Access to interactive map</li>
+                        <li>All clues and puzzles included</li>
+                        <li>Digital story guide</li>
+                        <li>Photo opportunities at locations</li>
+                        <li>Bonus: Behind-the-scenes story notes</li>
+                        <li>Exclusive: Detective achievement certificate</li>
+                    </ul>
+                </div>
+                <button class="select-button" onclick="selectPackage('complete', 135)">Select Package</button>
+            </div>
+        </div>
+
+        <div class="booking-form-section" id="bookingForm" style="display: none;">
+            <h2>Complete Your Booking</h2>
+            <div class="selected-package-summary" id="packageSummary"></div>
+            
+            <form class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="numPeople">Number of People *</label>
+                    <input type="number" id="numPeople" min="1" max="10" value="2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredDate">Preferred Start Date *</label>
+                    <input type="date" id="preferredDate" required>
+                </div>
+
+                <div class="form-group" id="storySelection"></div>
+
+                <div class="form-group">
+                    <label for="specialRequests">Special Requests or Questions</label>
+                    <textarea id="specialRequests" rows="4"></textarea>
+                </div>
+
+                <div class="total-section" id="totalCost"></div>
+
+                <button type="submit" class="submit-button">Complete Booking</button>
+            </form>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How does the experience work?</h3>
+                <p>After booking, you'll receive a digital guide with your starting location and instructions. Use your phone to access clues, solve puzzles, and navigate between locations at your own pace.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can we play as a group?</h3>
+                <p>Absolutely! Our mysteries are designed for 3-10 people. Everyone in your group will need to purchase a ticket.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How long does each story take?</h3>
+                <p>Stories range from 2-5 hours depending on difficulty and your pace. You can pause and resume at any time.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if the weather is bad?</h3>
+                <p>You can reschedule your adventure for any date. Many locations have indoor waiting areas if you need a break.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Urban Mystique. All rights reserved.</p>
+    </div>
+
+    <script src="main-menu.js"></script>
+    <script src="booking.js"></script>
+</body>
+</html>

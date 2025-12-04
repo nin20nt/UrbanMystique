@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map - Urban Mystique</title>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="map.css">
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Logo" class="header-logo">
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu" id="navMenu">
+            <a href="map.html">Map</a>
+            <a href="suspects.html">Suspects</a>
+            <a href="clues.html">Clues</a>
+            <a href="story.html">Story</a>
+        </nav>
+    </div>
+    <div class="map-container">
+        <h1 class="map-heading">Map</h1>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1blj33yPPvGFskNPkAgCcvZPivwg_qzk&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+        </div>
+    </div>
+    <script src="menu.js"></script>
+</body>
+</html>
